@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW"> <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>公眾景點清單</title> <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+
+    <style>
+      .item-content {
+        width: 100%;
+        /* 可以考慮加一些 padding */
+        padding: 8px 0; 
+      }
+      .item-title {
+        font-weight: bold;
+        margin: 0.25rem 0;
+        font-size: 1.1em; /* 微調字體大小 */
+      }
+      .item-subtitle {
+        color: var(--ion-color-medium);
+        font-size: 0.9em;
+        margin-bottom: 0.25rem; /* 增加一點間距 */
+      }
+      .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      /* 可以為圖片和影片預留樣式 */
+      .item-media img,
+      .item-media video,
+      .item-media iframe { /* iframe 用於 YouTube */
+         max-width: 100%; /* 限制最大寬度 */
+         height: auto;     /* 高度自動 */
+         margin-top: 0.5rem;
+         display: block;   /* 避免底部多餘空間 */
+      }
+    </style>
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>公眾景點清單</ion-title> </ion-toolbar>
+        <ion-toolbar> <ion-searchbar placeholder="搜尋景點名稱或特色..."></ion-searchbar>
+        </ion-toolbar>
+        <ion-toolbar>
+            <ion-item>
+                <ion-select label="地區分類" interface="popover" placeholder="全部地區"> 
+                  <ion-select-option value="">全部地區</ion-select-option>
+                  </ion-select>
+            </ion-item>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding"> <ion-list>
+          </ion-list>
+      </ion-content>
+    </ion-app>
+    <script src="script.js"></script>
+    </body>
+</html>
