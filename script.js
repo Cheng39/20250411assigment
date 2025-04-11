@@ -10,7 +10,7 @@ let attractions = [
     features:
       "	黄山原名黟山，因峰岩青黑，遥望苍黛而名。后因传轩辕黄帝曾在此炼丹成仙，唐玄宗信奉道教，故于天宝六年（公元747年）六月十七日改为“黄山”	",
     category: "	神秀山河	",
-    imageUrl: "		",
+    imageUrl: "images/huangshan.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=tnUAhPEtSIE	",
   },
   {
@@ -20,7 +20,7 @@ let attractions = [
     features:
       "	作为中国东南地区的主要标志和联合国教科文组织世界文化遗产名录之一，武夷山以其身为程朱理学的起源与发展地备受推崇。	",
     category: "	神秀山河	",
-    imageUrl: "		",
+    imageUrl: "images/wuyishan.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=UFZCCOgOnZI	",
   },
   {
@@ -30,7 +30,7 @@ let attractions = [
     features:
       "	环抱月牙泉的鸣沙山由一系列小山丘组成。鸣沙山以其独一无二的外形和随风而鸣的特点而闻名于世。	",
     category: "	神秀山河	",
-    imageUrl: "		",
+    imageUrl: "images/yueyaquan.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=9MbMP4DGdyY	",
   },
   {
@@ -40,7 +40,7 @@ let attractions = [
     features:
       "	作为亚洲最高的瀑布，宏伟壮观的黄果树瀑布高约77.8米，宽约101米。它也是世界上首屈一指的大型瀑布，从上下左右前后，几乎所有方位都可以览其胜景。	",
     category: "	神秀山河	",
-    imageUrl: "		",
+    imageUrl: "images/huangguoshupubu.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=eTTbEl6PnPo	",
   },
   {
@@ -50,7 +50,7 @@ let attractions = [
     features:
       "	该湖湖水的神奇之处在于，它能够日日夜夜年复一年的变换颜色。湖水的颜色来源于湖边风景的倒影，还有湖底的藻类和钙化的岩石。	",
     category: "	神秀山河	",
-    imageUrl: "		",
+    imageUrl: "images/jiuzhaigou.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=DKLP_By5gBo	",
   },
   {
@@ -60,7 +60,7 @@ let attractions = [
     features:
       "	一体化三尊造型的佛像分别朝向中国大陆，中国台湾和南中国海，寓意为观音菩萨不仅保佑中国，也保佑全世界。	",
     category: "	人文胜迹	",
-    imageUrl: "		",
+    imageUrl: "images/hainanguanyinxiang.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=CzC0ZtHGr80	",
   },
   {
@@ -70,7 +70,7 @@ let attractions = [
     features:
       "	除却举世闻名的万里长城之外，始建于2000多年前的西安城墙，也反应了这个文明古国全盛时期劳动人民的智慧和力量。	",
     category: "	人文胜迹	",
-    imageUrl: "		",
+    imageUrl: "images/xianchengqiang.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=vyfbp4X5QTg	",
   },
   {
@@ -80,7 +80,7 @@ let attractions = [
     features:
       "	这批砂岩雕像组合了风格迥异的佛像艺术品，有中国式佛像，印度式佛像，也有波斯式佛像。其中最大的雕塑高达17米，最小的则只有2厘米。	",
     category: "	人文胜迹	",
-    imageUrl: "		",
+    imageUrl: "images/yungang.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=e2HQKm6ORU0	",
   },
   {
@@ -90,7 +90,7 @@ let attractions = [
     features:
       "	共有九层的布达拉宫矗立在3600米高的海拔上，这使它成为世界上最高的宫殿。它曾是达赖喇嘛的冬宫居所和西藏原执政政府所在地。	",
     category: "	人文胜迹	",
-    imageUrl: "		",
+    imageUrl: "images/budalagong.jpg",
     videoUrl:
       "	https://www.youtube.com/watch?v=nj2x5BEPZsA&list=PLMX26aiIvX5q6_ohtz78W0pk_R_Q51wWZ	",
   },
@@ -101,7 +101,7 @@ let attractions = [
     features:
       "	“云和”的字面意思是“祥和的云朵”。1000多年来，云和以及周边的梯田已经成为当地农民们赖以生存的家园。	",
     category: "	人文胜迹	",
-    imageUrl: "		",
+    imageUrl: "images/yunti.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=B6xsrMGpIl0	",
   },
   {
@@ -111,7 +111,7 @@ let attractions = [
     features:
       "	维多利亚港两岸的夜景是世界上著名的观光点，是世界三大夜景之一。由于香港岛和九龙半岛高楼大厦满布，入夜后，大厦的灯光使维多利亚港两岸相互辉映。	",
     category: "	都市丽景	",
-    imageUrl: "		",
+    imageUrl: "images/HK.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=q9z348DSW-g	",
   },
   {
@@ -121,7 +121,7 @@ let attractions = [
     features:
       "	远东地区最大的东正教教堂坐落在哈尔滨——这座中国最有俄国风味的城市。20世纪初期日俄战争结束后，流亡的俄罗斯人建立了这座占地721平米，高54米的拜占庭式建筑，作为当地东正教团体的精神支柱。	",
     category: "	都市丽景	",
-    imageUrl: "		",
+    imageUrl: "images/haerbin.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=qmG3DsNLN4w	",
   },
   {
@@ -131,7 +131,7 @@ let attractions = [
     features:
       "	栈桥自1892年建立之初一直是青岛市的标志。起初是为了欢迎清朝杰出的政治家李鸿章而建立的。栈桥的一端是如古典美人的回澜阁，这里终年举办有丰盛的历史文化展。	",
     category: "	都市丽景	",
-    imageUrl: "		",
+    imageUrl: "images/qingdao.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=PflLUjTXYQE	",
   },
   {
@@ -141,7 +141,7 @@ let attractions = [
     features:
       "	凤凰吊脚楼式的房屋是中国文艺爱好者的理想居所。古城还有着丰富的苗族和土家族文化，每年都有成群结队的背包客慕名而至。	",
     category: "	都市丽景	",
-    imageUrl: "		",
+    imageUrl: "images/hunanfenghuang.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=FNYyxdevZ7E	",
   },
   {
@@ -151,7 +151,7 @@ let attractions = [
     features:
       "	中国的建筑一直深受风水和佛教思想的影响，在梵宫更是表现的淋漓尽致。因为梵宫可是占据着最好的风水：它位于小灵山脚下，太湖之滨，侧畔还有高达88米的灵山大佛。	",
     category: "	都市丽景	",
-    imageUrl: "		",
+    imageUrl: "images/fangong.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=5lDKdGKnUoc	",
   },
   {
@@ -161,7 +161,7 @@ let attractions = [
     features:
       "	羌族碉楼有四角、五角、六角、八角、十角、十二角等不同形体，有片石、粘土、石粘混合等不同建造方式，高者达十余丈。	",
     category: "	民族风情	",
-    imageUrl: "		",
+    imageUrl: "images/diaolou.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=QDHcWmQ2qwQ	",
   },
   {
@@ -171,7 +171,7 @@ let attractions = [
     features:
       "	西江千户苗寨在半山建造独具特色的木结构吊脚楼，千余户吊脚楼随着地形的起伏变化，层峦叠嶂，鳞次栉比，蔚为壮观。	",
     category: "	民族风情	",
-    imageUrl: "		",
+    imageUrl: "images/miaozhai.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=avGUYCXV24Y	",
   },
   {
@@ -181,7 +181,7 @@ let attractions = [
     features:
       "	丽江古镇又名大研镇，坐落在丽江坝中部，它是中国历史文化名城中唯一没有城墙的古镇，据说是因为丽江土司（世袭统治者）姓木，筑城势必如木字加框而成“困”字之故。	",
     category: "	民族风情	",
-    imageUrl: "		",
+    imageUrl: "images/lijiang.jpg",
     videoUrl: "	https://www.youtube.com/watch?v=PJAG5hDwerQ	",
   },
   {
@@ -191,7 +191,7 @@ let attractions = [
     features:
       "	槟榔谷黎苗文化旅游区创建于1998年，地处北纬18°，位于保亭县与三亚市交界的甘什岭自然保护区境内。景区坐落在万余棵亭亭玉立、婀娜多姿的槟榔林海，并置身于古木参天、藤蔓交织的热带雨林中	",
     category: "	民族风情	",
-    imageUrl: "		",
+    imageUrl: "images/binlanggu.jpeg",
     videoUrl: "	https://www.youtube.com/watch?v=SEAcnlUvO5o	",
   },
   {
@@ -201,7 +201,7 @@ let attractions = [
     features:
       "	呼伦贝尔草原是世界著名的天然牧场，是世界四大草原之一，被称为世界上最好的草原	",
     category: "	民族风情	",
-    imageUrl: "		",
+    imageUrl: "images/hulunbeier.jpeg",
     videoUrl: "	https://www.youtube.com/watch?v=uW9ptimEYZk	",
   },
 
