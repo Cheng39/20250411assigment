@@ -207,7 +207,73 @@ let attractions = [
 
   // ... 請在這裡繼續加入更多景點資料，至少 20 筆 ...
 ];
+const style = document.createElement("style");
+style.textContent = `
+  /* 小型裝置 (iPhone 5) */
+  @media (max-width: 320px) {
+    ion-item {
+      width: 100%;
+      margin: 5px;
+    }
+    .video-container {
+      width: 100%;
+      height: 200px; /* 調整影片容器高度 */
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 
+  /* 中型裝置 (iPhone 6/7/8, Galaxy S5) */
+  @media (min-width: 321px) and (max-width: 375px) {
+    ion-item {
+      width: 90%;
+      margin: 10px auto;
+    }
+    .video-container {
+      width: 90%;
+      height: 250px; /* 調整影片容器高度 */
+    }
+    img {
+      width: 90%;
+      height: auto;
+    }
+  }
+
+  /* 大型裝置 (Galaxy Note, iPhone 12 Pro Max) */
+  @media (min-width: 376px) {
+    ion-item {
+      width: 80%;
+      margin: 20px auto;
+    }
+    .video-container {
+      width: 80%;
+      height: 300px; /* 調整影片容器高度 */
+    }
+    img {
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  /* 優化圖片和影片顯示 */
+ .item-media img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 0.5rem;
+  object-fit: contain; /* 保持圖片原始比例，並完整顯示在容器中 */
+}
+
+.item-media iframe {
+  max-width: 100%;
+  height: 300px; /* 您可以根據需要調整 iframe 的高度 */
+  display: block;
+  margin-top: 0.5rem;
+}
+`;
+document.head.appendChild(style);
 // --- 重要提醒 ---
 // 1. 請務必找到真實的景點資料來替換上面的範例。
 // 2. 圖片 URL 需注意版權、大小 (<300KB) 和尺寸 (<800x800)。
@@ -232,61 +298,39 @@ const categorySelectElement = document.querySelector("ion-select");
 
 // --- 渲染列表的函數 ---
 function renderAttractions(itemsToRender) {
-  // 首先清空現有的列表內容，防止重複添加
   listElement.innerHTML = "";
 
-  // 如果沒有項目需要渲染 (例如搜尋結果為空)，可以顯示提示訊息
   if (itemsToRender.length === 0) {
     listElement.innerHTML = "<ion-item>找不到符合條件的景點。</ion-item>";
-    return; // 結束函數執行
+    return;
   }
 
-  // 遍歷要渲染的景點陣列
   itemsToRender.forEach((item) => {
-    // 為每個景點創建一個 ion-item 元素字串
-    // 使用模板字串 (``) 可以方便地插入變數
     const itemHTML = `
-        <ion-item>
-          <div class="item-content">
-            <div class="item-title">${item.name}</div> 
-            <div class="item-subtitle">${item.region} | ${
-      item.openingHours
-    }</div> 
-            <div class="item-details">${item.features}</div>
-            
-            <div class="item-media">
-              <img src="${item.imageUrl}" alt="${
-      item.name
-    } 的照片" loading="lazy"> 
-              </div>
-  
-            <div class="item-media">
-              ${
-                // 判斷 videoUrl 是 YouTube 連結還是本地檔案
-                item.videoUrl.includes("youtube.com") ||
-                item.videoUrl.includes("youtu.be")
-                  ? `<iframe width="100%" height="auto" src="https://www.youtube.com/embed/${getYoutubeVideoId(
-                      item.videoUrl
-                    )}" frameborder="0" allowfullscreen></iframe>`
-                  : item.videoUrl // 如果是本地影片，先簡單顯示路徑文字，或之後再改成 <video> 標籤
-                // : `<video controls width="100%" preload="metadata"><source src="${item.videoUrl}" type="video/mp4">您的瀏覽器不支援 HTML5 影片。</video>` // 完整的 video 標籤用法
-              }
-              </div>
-  
-            <div class="tag-container">
-              <ion-chip size="small" outline="true">${item.category}</ion-chip> 
-              </div>
-          </div>
-        </ion-item>
-      `;
-    // 將創建好的 HTML 字串添加到 ion-list 的末尾
+      <ion-item>
+        <ion-label>
+          <h2>${item.name}</h2>
+          <p>${item.region} | ${item.openingHours}</p>
+          <p>${item.features}</p>
+        </ion-label>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/${getYoutubeVideoId(item.videoUrl)}" 
+            frameborder="0" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <img src="${item.imageUrl}" alt="${item.name} 的照片" loading="lazy">
+        <ion-chip>${item.category}</ion-chip>
+      </ion-item>
+    `;
+
     listElement.innerHTML += itemHTML;
   });
 }
 
 // --- 輔助函數：從 YouTube URL 中提取 Video ID (如果需要嵌入 YouTube) ---
 function getYoutubeVideoId(url) {
-  // 簡單的提取邏輯，可能需要根據實際 YouTube URL 格式調整
   try {
     const urlObj = new URL(url);
     if (urlObj.hostname === "youtu.be") {
@@ -294,14 +338,58 @@ function getYoutubeVideoId(url) {
     } else if (urlObj.hostname.includes("youtube.com")) {
       return urlObj.searchParams.get("v");
     }
-    return null; // 不是有效的 YouTube 連結
+    return null;
   } catch (e) {
-    return null; // URL 格式錯誤
+    return null;
   }
 }
+// --- 搜尋功能 ---
+searchbarElement.addEventListener("ionInput", (event) => {
+  const searchTerm = event.detail.value.toLowerCase();
+  const filteredAttractions = attractions.filter((attraction) => {
+    return (
+      attraction.name.toLowerCase().includes(searchTerm) ||
+      attraction.features.toLowerCase().includes(searchTerm)
+    );
+  });
+  renderAttractions(filteredAttractions);
+});
+// --- 分類功能 ---
+categorySelectElement.addEventListener("ionChange", (event) => {
+  const selectedCategory = event.detail.value;
+  const searchTerm = searchbarElement.value.toLowerCase(); // 取得搜尋框的關鍵字
+  let filteredAttractions = attractions;
+
+  // 先根據分類過濾
+  if (selectedCategory) {
+    filteredAttractions = filteredAttractions.filter((attraction) => {
+      return attraction.category === selectedCategory;
+    });
+  }
+
+  // 再根據關鍵字過濾
+  if (searchTerm) {
+    filteredAttractions = filteredAttractions.filter((attraction) => {
+      return (
+        attraction.name.toLowerCase().includes(searchTerm) ||
+        attraction.features.toLowerCase().includes(searchTerm)
+      );
+    });
+  }
+
+  renderAttractions(filteredAttractions);
+});
 // --- 初始載入 ---
-// 頁面載入完成後，首次渲染所有景點
 document.addEventListener("DOMContentLoaded", () => {
   renderAttractions(attractions);
-  // 之後在這裡也會加入設定分類選單的程式碼
+// 初始化分類選項
+const categories = [...new Set(attractions.map((attraction) => attraction.category))];
+categories.forEach((category) => {
+  const option = document.createElement("ion-select-option");
+  option.value = category;
+  option.textContent = category;
+  categorySelectElement.appendChild(option);
 });
+});
+
+
