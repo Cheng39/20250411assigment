@@ -1,73 +1,43 @@
 <!DOCTYPE html>
-<html lang="zh-TW"> <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>公眾景點清單</title> <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
-    />
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公眾景點清單</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>公眾景點清單</h1>
+    </header>
 
-    <style>
-      .item-content {
-        width: 100%;
-        /* 可以考慮加一些 padding */
-        padding: 8px 0; 
-      }
-      .item-title {
-        font-weight: bold;
-        margin: 0.25rem 0;
-        font-size: 1.1em; /* 微調字體大小 */
-      }
-      .item-subtitle {
-        color: var(--ion-color-medium);
-        font-size: 0.9em;
-        margin-bottom: 0.25rem; /* 增加一點間距 */
-      }
-      .tag-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-      }
-      /* 可以為圖片和影片預留樣式 */
-      .item-media img,
-      .item-media video,
-      .item-media iframe { /* iframe 用於 YouTube */
-         max-width: 100%; /* 限制最大寬度 */
-         height: auto;     /* 高度自動 */
-         margin-top: 0.5rem;
-         display: block;   /* 避免底部多餘空間 */
-      }
-    </style>
-  </head>
-  <body>
-    <ion-app>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>公眾景點清單</ion-title> </ion-toolbar>
-        <ion-toolbar> <ion-searchbar placeholder="搜尋景點名稱或特色..."></ion-searchbar>
-        </ion-toolbar>
-        <ion-toolbar>
-            <ion-item>
-                <ion-select label="地區分類" interface="popover" placeholder="全部地區"> 
-                  <ion-select-option value="">全部地區</ion-select-option>
-                  </ion-select>
-            </ion-item>
-        </ion-toolbar>
-      </ion-header>
+    <main>
+        <section id="search-filter">
+            <input type="text" id="search-input" placeholder="搜尋景點名稱或特色...">
+            <select id="category-select">
+                <option value="">全部地區</option>
+                <option value="神秀山河">神秀山河</option>
+                <option value="人文胜迹">人文胜迹</option>
+                <option value="都市丽景">都市丽景</option>
+                <option value="民族风情">民族风情</option>
+            </select>
+        </section>
 
-      <ion-content class="ion-padding"> <ion-list>
-          </ion-list>
-      </ion-content>
-    </ion-app>
+        <section id="attractions-list">
+            <article class="attraction-item">
+                <h2>黃山</h2>
+                <p>安徽 | 07:00-19:00</p>
+                <p>黃山原名黟山，因峰岩青黑，遙望蒼黛而名。後因傳軒轅黃帝曾在此煉丹成仙，唐玄宗信奉道教，故於天寶六年（公元747年）六月十七日改為“黃山”。</p>
+                <video src="videos/huangshan.mp4" controls></video>
+                <img src="images/huangshan.jpg" alt="黃山照片">
+            </article>
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 公眾景點清單</p>
+    </footer>
+
     <script src="script.js"></script>
-    </body>
+</body>
 </html>
